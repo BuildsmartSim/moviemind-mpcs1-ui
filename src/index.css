@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --mm-bg-0: #0d0d0d;
+  --mm-bg-1: #1c1c1c;
+  --mm-text-on-dark: #e8e3d8;
+  --mm-text-on-card: #1c1c1c;
+  --mm-amber: #f2c56a;
+  --mm-teal: #48e0d2;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    @apply min-h-screen bg-[color:var(--mm-bg-0)] text-[color:var(--mm-text-on-dark)] font-sans antialiased;
+  }
+}
+
+.mm-fade-transition {
+  @apply transition-opacity duration-300 ease-mm-fade;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mm-parallax {
+    transform: none !important;
+  }
+
+  .mm-fade-transition {
+    transition-duration: 120ms !important;
+  }
+}
+
+.focus-visible\:outline-none:focus-visible {
+  outline: none;
+}
